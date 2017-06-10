@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/coderetreat201706.iml" filepath="$PROJECT_DIR$/coderetreat201706.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coderetreat201706_main.iml" filepath="$PROJECT_DIR$/.idea/modules/coderetreat201706_main.iml" group="coderetreat201706" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coderetreat201706_test.iml" filepath="$PROJECT_DIR$/.idea/modules/coderetreat201706_test.iml" group="coderetreat201706" />
+    </modules>
+  </component>
+</project>
