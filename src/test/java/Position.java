@@ -1,27 +1,27 @@
 import java.util.Objects;
 
 class Position {
-  private final int x;
-  private final int y;
+  private final Column column;
+  private final Row row;
 
-  public Position(int x, int y) {
-    this.x = x;
-    this.y = y;
+  Position(Column column, Row row) {
+    this.column = column;
+    this.row = row;
   }
 
-  public int x() {
-    return x;
+  Column x() {
+    return column;
   }
 
-  public int y() {
-    return y;
+  Row y() {
+    return row;
   }
 
   @Override
   public String toString() {
     final StringBuilder sb = new StringBuilder("Position{");
-    sb.append("x=").append(x);
-    sb.append(", y=").append(y);
+    sb.append("column=").append(column);
+    sb.append(", row=").append(row);
     sb.append('}');
     return sb.toString();
   }
@@ -31,12 +31,12 @@ class Position {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Position position = (Position) o;
-    return x == position.x &&
-      y == position.y;
+    return Objects.equals(column, position.column) &&
+      Objects.equals(row, position.row);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(x, y);
+    return Objects.hash(column, row);
   }
 }

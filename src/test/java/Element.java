@@ -2,6 +2,7 @@ import java.util.Objects;
 
 public class Element {
   private final Position position;
+  private Element successor;
 
   public Element(Position position) {
     this.position = position;
@@ -13,10 +14,12 @@ public class Element {
 
   @Override
   public String toString() {
-    final StringBuilder sb = new StringBuilder("Element{");
-    sb.append("position=").append(position);
-    sb.append('}');
-    return sb.toString();
+    return "Element{" + "position=" + position + '}';
+  }
+
+  public Element successorAt(CardinalDirection cardinalDirection) {
+    successor = new Element(new Position(this.position.x().successor(), this.position.y()));
+    return successor;
   }
 
   @Override
@@ -24,11 +27,12 @@ public class Element {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Element element = (Element) o;
-    return Objects.equals(position, element.position);
+    return Objects.equals(position, element.position) &&
+      Objects.equals(successor, element.successor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(position);
+    return Objects.hash(position, successor);
   }
 }
